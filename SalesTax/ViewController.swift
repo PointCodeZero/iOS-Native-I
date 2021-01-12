@@ -9,11 +9,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var priceTxt: UITextField!
+    @IBOutlet weak var saleTaxTxt: UITextField!
+    @IBOutlet weak var totalPriceLbl: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func calculateTotalPrice(_ sender: Any) {
+        let price = Double(priceTxt.text!)!
+        let salesTax = Double(saleTaxTxt.text!)!
+        
+        let totalSalesTax = price * salesTax
+    }
+    
 }
 
